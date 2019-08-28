@@ -25,3 +25,7 @@
 .border-bottom {
     border-bottom:1px solid rgba(0,0,0,.125);
 }
+
+.mr-05r {
+    margin-right:0.5rem;
+}

@@ -11,7 +11,6 @@
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="./stylesheets/board-style.css" rel="stylesheet">
     <link href="./stylesheets/util.css" rel="stylesheet">
-    <link href="./stylesheets/login-style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,102 +32,30 @@
 
     <div class="container-fluid gedf-wrapper">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-md-3">
                 <div class="card">
-                    <div class="login-wrap">
-                        <div class="login-html">
-                            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-                            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-                            <div class="login-form">
-                                <div class="sign-in-htm">
-                                    <form action="/signIn" method="POST">
-                                        <div class="group">
-                                            <label for="email" class="label">email</label>
-                                            <input id="email" type="text" class="input" name="email">
-                                        </div>
-                                        <div class="group">
-                                            <label for="pass" class="label">Password</label>
-                                            <input id="pass" type="password" class="input" data-type="password" name="password">
-                                        </div>
-                                        <div class="group">
-                                            <input id="check" type="checkbox" class="check" checked name="keepSigned">
-                                            <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                                        </div>
-                                        <div class="group">
-                                            <input type="submit" class="button" value="Sign In">
-                                        </div>
-                                        <div class="hr"></div>
-                                        <div class="foot-lnk">
-                                            <a href="#forgot">Forgot Password?</a>
-                                        </div>
-                                    </form> 
-                                </div>
-                                <div class="sign-up-htm">
-                                    <form method="POST" action="/signUp">
-                                        <div class="group">
-                                            <label for="user" class="label">Username</label>
-                                            <input id="user" type="text" class="input" name="username">
-                                        </div>
-                                        <div class="group">
-                                            <label for="pass" class="label">Password</label>
-                                            <input id="pass" type="password" class="input" data-type="password" name="password">
-                                        </div>
-                                        <div class="group">
-                                            <label for="pass" class="label">Repeat Password</label>
-                                            <input id="pass" type="password" class="input" data-type="password">
-                                        </div>
-                                        <div class="group">
-                                            <label for="pass" class="label">Email Address</label>
-                                            <input id="pass" type="text" class="input" name="email">
-                                        </div>
-                                        <div class="group">
-                                            <label for="pass" class="label">Nick Name</label>
-                                            <input id="pass" type="text" class="input" name="nickName">
-                                        </div>
-                                        <div class="group">
-                                            <label for="pass" class="label">Like Items</label>
-                                            <div>
-                                                <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeCoding" />
-                                                    <strong class="mr-05r select-item">Coding</strong>
-                                                </label>
-                                                <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeDaily" />
-                                                    <strong class="mr-05r select-item">Daily</strong>
-                                                </label>
-                                                <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeFood" />
-                                                    <strong class="mr-05r select-item">Food</strong>
-                                                </label>
-                                                <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeStudy" />
-                                                    <strong class="mr-05r select-item">Study</strong>
-                                                </label>
-                                                <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeFashion" />
-                                                    <strong class="mr-05r select-item">Fashion</strong>
-                                                </label>
-                                                <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeMusic" />
-                                                    <strong class="mr-05r select-item">Music</strong>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="group">
-                                            <input type="submit" class="button" value="Sign Up">
-                                        </div>
-                                    </form>
-                                    <div class="hr"></div>
-                                    <div class="foot-lnk">
-                                        <label for="tab-1">Already Member?</a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="card-body">
+                        <div class="h5">@LeeCross</div>
+                        <div class="h7 text-muted">Fullname : Miracles Lee Cross</div>
+                        <div class="h7">Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java,
+                            Node.js,
+                            etc.
                         </div>
                     </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Followers</div>
+                            <div class="h5">5.2342</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Following</div>
+                            <div class="h5">6758</div>
+                        </li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-lg-6 gedf-main">
+            <div class="col-md-6 gedf-main">
 
                 <!--- \\\\\\\Post-->
                 <div class="card gedf-card">
@@ -235,20 +162,20 @@
                     </div>
                     <div class="card-footer">
                         <div class="d-flex justify-content-between align-items-center border-bottom pt-10 pb-10 row">
-                            <div class="col-lg-4">
+                            <div class="col-md-4">
                                 <img src="https://picsum.photos/30/30" alt="" class="rounded-circle">
                                 <div class="h7 m-0 comment-master ml-1"><b>@Lee Kan</b></div>
                             </div>
-                            <div class="col-lg-8 comment-content">
+                            <div class="col-md-8 comment-content">
                                 Comments Contents
                             </div>
                         </div>
                         <div class="d-flex justify-content-between align-items-center pt-10 pb-10 border-bottom row">
-                            <div class="col-lg-4">
+                            <div class="col-md-4">
                                 <img src="https://picsum.photos/30/30" alt="" class="rounded-circle">
                                 <div class="h7 m-0 comment-master ml-1"><b>@Lee Kan</b></div>
                             </div>
-                            <div class="col-lg-8 comment-content">
+                            <div class="col-md-8 comment-content">
                                 Comments Contents
                             </div>
                         </div>
@@ -382,7 +309,7 @@
 
 
             </div>
-            <div class="col-lg-3">
+            <div class="col-md-3">
                 <div class="card gedf-card">
                     <div class="card-body side-menu">
                         <h5><a href="#" class="menu-link">Menu-One</a></h5>
@@ -403,7 +330,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/ulg/popper.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"

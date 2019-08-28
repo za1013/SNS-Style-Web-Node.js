@@ -56,7 +56,7 @@ module.exports = (passport) => {
                     return done(null, false, req.flash("signMsg", "Don't use Email"))
                 }
 
-                User.create(req.body.username, email, password)
+                User.create(req.body)
                 .then((user) => {
                     console.log("Info - Mongoose : new User Save :", user)
                     return done(null, user, req.flash("signMsg", "Success Register"))
