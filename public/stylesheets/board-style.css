@@ -1,0 +1,85 @@
+body {
+    background-color: #eeeeee;
+}
+
+.h7 {
+    font-size: 0.9rem;
+}
+
+.gedf-wrapper {
+    margin-top: 0.97rem;
+}
+
+@media (min-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+}
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+    content: none;
+    display: none;
+}
+
+.comment-master {
+    display:inline-block;
+}
+
+.comment-content {
+    font-size:0.75rem;
+    min-height:30px;
+    line-height:30px;
+}
+
+.side-menu {
+    text-align:center;
+}
+
+.menu-link {
+    transition:color 0.8s;
+    font-weight:800;
+}
+
+.menu-link:hover {
+    text-decoration:none;
+}
+
+.side-menu > h5:nth-child(1) > .menu-link {
+    color:#F35F5B;
+}
+.side-menu > h5:nth-child(1) > .menu-link:hover {
+    color:#AD160F;
+}
+
+.side-menu > h5:nth-child(3) > .menu-link {
+    color:#FF9058;
+}
+.side-menu > h5:nth-child(3) > .menu-link:hover {
+    color:#D8510C;
+}
+
+.side-menu > h5:nth-child(5) > .menu-link {
+    color:#FFC758;
+}
+.side-menu > h5:nth-child(5) > .menu-link:hover {
+    color:#D8940C;
+}
+
+.side-menu > h5:nth-child(7) > .menu-link {
+    color:#7FE374;
+}
+.side-menu > h5:nth-child(7) > .menu-link:hover {
+    color:#1AB10A;
+}
+
+.side-menu > h5:nth-child(9) > .menu-link {
+    color:#6BA3C7;
+}
+.side-menu > h5:nth-child(9) > .menu-link:hover {
+    color:#0F5A8A;
+}

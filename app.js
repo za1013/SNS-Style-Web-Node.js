@@ -15,7 +15,7 @@ const usersRouter = require('./server/routes/users');
 const app = express();
 
 // view engine setup
-app.set('views', path.resolve(__dirname, 'server', 'views'));
+app.set('views', path.resolve(__dirname, 'server', 'views', 'pages'));
 app.set('view engine', 'ejs');
 
 // Server Setting
@@ -38,7 +38,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.resolve(__dirname, path.resolve('server', 'views'))));
+app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(session({
   resave : true,
   saveUninitialized : false,
