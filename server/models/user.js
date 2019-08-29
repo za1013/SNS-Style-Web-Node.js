@@ -30,6 +30,9 @@ const userSchema = new mongoose.Schema({
     },
     likeItem : {
         type: [String],
+    },
+    userImg : {
+        type : String,
     }
 })
 

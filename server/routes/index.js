@@ -9,10 +9,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/board', (req, res) => {
-  res.render('board', { user : req.user })
-})
-
 router.get('/temp', (req, res) => {
   res.render("temp")
 })
@@ -23,10 +19,6 @@ router.post('/login', passport.authenticate('local-login', {
 }))
 
 
-router.post("/signUp", (req, res) => {
-  // ! 2019.08.28 EjS View OK! PASSPORT Connect Please
-  res.redirect('/board')
-})
 
 router.post('/register', passport.authenticate('local-register', {
   successRedirect : '/board',

@@ -9,9 +9,9 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="./stylesheets/board-style.css" rel="stylesheet">
-    <link href="./stylesheets/util.css" rel="stylesheet">
-    <link href="./stylesheets/login-style.css" rel="stylesheet">
+    <link href="../stylesheets/board-style.css" rel="stylesheet">
+    <link href="../stylesheets/util.css" rel="stylesheet">
+    <link href="../stylesheets/login-style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -38,8 +38,10 @@
                     <% if(!user){ %>
                     <div class="login-wrap">
                         <div class="login-html rounded-col">
-                            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-                            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                                class="tab">Sign In</label>
+                            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2"
+                                class="tab">Sign Up</label>
                             <div class="login-form">
                                 <div class="sign-in-htm">
                                     <form action="/login" method="POST">
@@ -49,7 +51,8 @@
                                         </div>
                                         <div class="group">
                                             <label for="pass" class="label">Password</label>
-                                            <input id="pass" type="password" class="input" data-type="password" name="password">
+                                            <input id="pass" type="password" class="input" data-type="password"
+                                                name="password">
                                         </div>
                                         <div class="group">
                                             <input id="check" type="checkbox" class="check" checked name="keepSigned">
@@ -62,7 +65,7 @@
                                         <div class="foot-lnk forgot-pw">
                                             <a href="#forgot">Forgot Password?</a>
                                         </div>
-                                    </form> 
+                                    </form>
                                 </div>
                                 <div class="sign-up-htm">
                                     <form method="POST" action="/register">
@@ -72,7 +75,8 @@
                                         </div>
                                         <div class="group">
                                             <label for="pass" class="label">Password</label>
-                                            <input id="pass" type="password" class="input" data-type="password" name="password">
+                                            <input id="pass" type="password" class="input" data-type="password"
+                                                name="password">
                                         </div>
                                         <div class="group">
                                             <label for="pass" class="label">Repeat Password</label>
@@ -90,27 +94,33 @@
                                             <label for="pass" class="label">Like Items</label>
                                             <div>
                                                 <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeCoding" />
+                                                    <input type="checkbox" class="option-input checkbox mr-05r"
+                                                        name="likeCoding" />
                                                     <strong class="mr-05r select-item">Coding</strong>
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeDaily" />
+                                                    <input type="checkbox" class="option-input checkbox mr-05r"
+                                                        name="likeDaily" />
                                                     <strong class="mr-05r select-item">Daily</strong>
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeFood" />
+                                                    <input type="checkbox" class="option-input checkbox mr-05r"
+                                                        name="likeFood" />
                                                     <strong class="mr-05r select-item">Food</strong>
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeStudy" />
+                                                    <input type="checkbox" class="option-input checkbox mr-05r"
+                                                        name="likeStudy" />
                                                     <strong class="mr-05r select-item">Study</strong>
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeFashion" />
+                                                    <input type="checkbox" class="option-input checkbox mr-05r"
+                                                        name="likeFashion" />
                                                     <strong class="mr-05r select-item">Fashion</strong>
                                                 </label>
                                                 <label>
-                                                    <input type="checkbox" class="option-input checkbox mr-05r" name="likeMusic" />
+                                                    <input type="checkbox" class="option-input checkbox mr-05r"
+                                                        name="likeMusic" />
                                                     <strong class="mr-05r select-item">Music</strong>
                                                 </label>
                                             </div>
@@ -148,58 +158,64 @@
 
                 <!--- \\\\\\\Post-->
                 <div class="card gedf-card">
-                    <div class="card-header">
-                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab"
-                                    aria-controls="posts" aria-selected="true">Make
-                                    a publication</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="images-tab" data-toggle="tab" role="tab" aria-controls="images"
-                                    aria-selected="false" href="#images">Images</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="posts" role="tabpanel"
-                                aria-labelledby="posts-tab">
-                                <div class="form-group">
-                                    <label class="sr-only" for="message">post</label>
-                                    <textarea class="form-control" id="message" rows="3"
-                                        placeholder="What are you thinking?"></textarea>
-                                </div>
+                    <form action="/board/createPost" method="POST">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab"
+                                        aria-controls="posts" aria-selected="true">Make
+                                        a publication</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="images-tab" data-toggle="tab" role="tab"
+                                        aria-controls="images" aria-selected="false" href="#images">Images</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="posts" role="tabpanel"
+                                    aria-labelledby="posts-tab">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" rows="3" name="postTitle" placeholder="Post Title" />
+                                        <br>
+                                        <label class="sr-only" for="message">post</label>
+                                        <textarea class="form-control" id="message" rows="3"
+                                            placeholder="What are you thinking?" name="postContent"></textarea>
+                                        <br>
+                                        <input type="text" class="form-control" rows="3" name="postTag" placeholder="Post Tag Ex : #JS#Python" />
+                                    </div>
 
+                                </div>
+                                <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+                                    <div class="form-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label" for="customFile">Upload image</label>
+                                        </div>
+                                    </div>
+                                    <div class="py-4"></div>
+                                </div>
                             </div>
-                            <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
-                                <div class="form-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Upload image</label>
+                            <div class="btn-toolbar justify-content-between">
+                                <div class="btn-group">
+                                    <button type="submit" class="btn btn-primary">Post</button>
+                                </div>
+                                <div class="btn-group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-globe"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#"><i class="fa fa-globe"></i> Public</a>
+                                        <a class="dropdown-item" href="#"><i class="fa fa-users"></i> Friends</a>
+                                        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Just me</a>
                                     </div>
                                 </div>
-                                <div class="py-4"></div>
                             </div>
                         </div>
-                        <div class="btn-toolbar justify-content-between">
-                            <div class="btn-group">
-                                <button type="submit" class="btn btn-primary">share</button>
-                            </div>
-                            <div class="btn-group">
-                                <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-globe"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
-                                    <a class="dropdown-item" href="#"><i class="fa fa-globe"></i> Public</a>
-                                    <a class="dropdown-item" href="#"><i class="fa fa-users"></i> Friends</a>
-                                    <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Just me</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+                </form>
                 <!-- Post /////-->
 
                 <!--- \\\\\\\Post-->
@@ -407,7 +423,7 @@
                         <hr>
                         <h5><a href="#" class="menu-link">Menu-Three</a></h5>
                         <hr>
-                        <h5><a href="#"class="menu-link">Menu-Four</a></h5>
+                        <h5><a href="#" class="menu-link">Menu-Four</a></h5>
                         <hr>
                         <h5><a href="#" class="menu-link">Menu-Five</a></h5>
                     </div>

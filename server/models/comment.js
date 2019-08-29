@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const commentSchema = new mongoose.Schema({
+    commentWriterImg : {
+        type : String,
+        required : true,
+    },
     commentWriter : {
         type : String,
         required : true,
@@ -16,3 +20,5 @@ const commentSchema = new mongoose.Schema({
         required : true,
     }
 })
+
+module.exports = mongoose.model('Comment', commentSchema)
