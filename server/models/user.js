@@ -37,19 +37,19 @@ userSchema.statics.create = function(params){
     console.log("Create User")
     
     let likeList = []
-    if(params.likeCoding) likeList.push(params.likeCoding)
-    if(params.likeDaily) likeList.push(params.likeDaily)
-    if(params.likeFood) likeList.push(params.likeFood)
-    if(params.likeStudy) likeList.push(params.likeStudy)
-    if(params.likeFashion) likeList.push(params.likeFashion)
-    if(params.likeMusic) likeList.push(params.likeMusic)
+    if(params.likeCoding) likeList.push("Coding")
+    if(params.likeDaily) likeList.push("Daily")
+    if(params.likeFood) likeList.push("Food")
+    if(params.likeStudy) likeList.push("Study")
+    if(params.likeFashion) likeList.push("Fashion")
+    if(params.likeMusic) likeList.push("Music")
 
     const user = new this()
     user.username = params.username
     user.email = params.email
     user.password = wrapHashPassword(params.password)
     user.nickName = params.nickName
-    user.likeItem = likeItem
+    user.likeItem = likeList
 
     return user.save()
 }

@@ -35,13 +35,14 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="card">
+                    <% if(!user){ %>
                     <div class="login-wrap">
-                        <div class="login-html">
+                        <div class="login-html rounded-col">
                             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
                             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
                             <div class="login-form">
                                 <div class="sign-in-htm">
-                                    <form action="/signIn" method="POST">
+                                    <form action="/login" method="POST">
                                         <div class="group">
                                             <label for="email" class="label">email</label>
                                             <input id="email" type="text" class="input" name="email">
@@ -58,13 +59,13 @@
                                             <input type="submit" class="button" value="Sign In">
                                         </div>
                                         <div class="hr"></div>
-                                        <div class="foot-lnk">
+                                        <div class="foot-lnk forgot-pw">
                                             <a href="#forgot">Forgot Password?</a>
                                         </div>
                                     </form> 
                                 </div>
                                 <div class="sign-up-htm">
-                                    <form method="POST" action="/signUp">
+                                    <form method="POST" action="/register">
                                         <div class="group">
                                             <label for="user" class="label">Username</label>
                                             <input id="user" type="text" class="input" name="username">
@@ -118,14 +119,29 @@
                                             <input type="submit" class="button" value="Sign Up">
                                         </div>
                                     </form>
-                                    <div class="hr"></div>
-                                    <div class="foot-lnk">
-                                        <label for="tab-1">Already Member?</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <% }else{ %>
+                    <div class="card-body">
+                        <div class="h5">@<%= user.username %></div>
+                        <div class="h7 text-muted">Fullname : <%= user.nickName%></div>
+                        <div class="h7"><%= user.likeItem %>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Followers</div>
+                            <div class="h5">미정</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Following</div>
+                            <div class="h5">미정</div>
+                        </li>
+                        <li class="list-group-item logout-link"><a href="/logout">LOG OUT</a></li>
+                    </ul>
+                    <% } %>
                 </div>
             </div>
             <div class="col-lg-6 gedf-main">

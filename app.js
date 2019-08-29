@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 const session = require('express-session')
 const passport = require('passport')
 const flash = require('connect-flash')
+const MongoStore = require('connect-mongo')(session)
 
 
 const indexRouter = require('./server/routes/index');
@@ -47,7 +48,11 @@ app.use(session({
     httpOnly : true,
     secure : false,
     maxAge : 1000 * 60 * 15,
-  }
+  },
+  store : new MongoStore({
+    url : process.env.DB_URL,
+    collection : 'sessions'
+  })
 }))
 app.use(passport.initialize())
 app.use(passport.session())

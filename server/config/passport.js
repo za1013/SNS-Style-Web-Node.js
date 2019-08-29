@@ -65,6 +65,9 @@ module.exports = (passport) => {
                     return done(saveError)
                 })
             })
+            .catch((findErr) => {
+                return done(findErr)
+            })
         }else{
             return done(null, false, req.flash("signMsg", "Impossible Local Register"))
         }
