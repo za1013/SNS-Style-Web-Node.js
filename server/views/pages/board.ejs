@@ -297,7 +297,7 @@
                                         <% }) %>
                                     <% } %>
                                     <div class="commentWriter pt-10 pb-10">
-                                        <form action="/board/comment/createComment/id" method="POST">
+                                        <form action="/board/comment/createComment/<%= post._id %>" method="POST">
                                             <div class="form-group row align-items-center comment-form">
                                                 <input type="text" class="form-control col-lg-10" name="comment" placeholder="Comment" />
                                                 <div class="btn-group col-lg-2">

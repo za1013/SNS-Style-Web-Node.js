@@ -3,6 +3,9 @@ const mongoose = require('mongoose')
 const commentSchema = new mongoose.Schema({
     commentWriterImg : {
         type : String,
+    },
+    writingPost : {
+        type : String,
         required : true,
     },
     commentWriter : {
@@ -20,5 +23,16 @@ const commentSchema = new mongoose.Schema({
         required : true,
     }
 })
+
+commentSchema.statics.create = function(req, id){
+
+    let newComment = new this()
+    newComment.writingPost = id
+    newComment.commentWriter = req.user.username
+    newComment.commentContent = req.body.comment
+    newComment.commentDate = Date.now()
+
+    return newComment.save()
+}
 
 module.exports = mongoose.model('Comment', commentSchema)

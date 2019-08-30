@@ -25,12 +25,10 @@ const postSchema = new mongoose.Schema({
     },
 
     likeMember : {
-        type : [Schema.ObjectId],
-        ref : 'User'
+        type : [{ type : Schema.Types.ObjectId, ref : 'User' }]
     },
     postComment : {
-        type : [Schema.ObjectId],
-        ref : "Comment"
+        type : [{ type : Schema.Types.ObjectId, ref : 'Comment'}]
     },
     writeDate : {
         type : Date,
