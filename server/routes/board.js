@@ -19,11 +19,9 @@ router.get('/', (req, res) => {
   })
 
 router.get('/myPage', (req, res) => {
-    console.log("Point 1")
     if(req.isAuthenticated()){
         Post.find({ postWriter : req.user.username}).sort({writeDate : 'descending'}).limit(4).populate('postComment')
         .then((postArr) => {
-            console.log("Point 2", postArr)
             res.render('myPage', { user : req.user, posts : postArr })
         })
         .catch((err) => {
@@ -87,6 +85,9 @@ router.post('/comment/createComment/:id', (req, res) => {
             console.log("Test Point 4 : Failed Create Comment", err)
             res.redirect('/board')
         })
+    }else{
+        console.log("Failed Comment Create")
+        res.redirect('/board')
     }
 })
 
