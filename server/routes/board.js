@@ -17,6 +17,23 @@ router.get('/', (req, res) => {
     })
 
   })
+
+router.get('/myPage', (req, res) => {
+    console.log("Point 1")
+    if(req.isAuthenticated()){
+        Post.find({ postWriter : req.user.username}).sort({writeDate : 'descending'}).limit(4).populate('postComment')
+        .then((postArr) => {
+            console.log("Point 2", postArr)
+            res.render('myPage', { user : req.user, posts : postArr })
+        })
+        .catch((err) => {
+            console.log("Point 3")
+            throw err
+        })
+    }else{
+        res.redirect('/board')
+    }
+})
   
 router.post('/createPost', (req, res) => {
     if(req.user){

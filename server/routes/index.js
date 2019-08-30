@@ -29,7 +29,7 @@ router.get('/logout', (req, res) => {
   if(req.isAuthenticated()){
     req.logout()
   }
-  res.redirect('/board', { user : req.user })
+  res.redirect('/board')
 })
 
 
