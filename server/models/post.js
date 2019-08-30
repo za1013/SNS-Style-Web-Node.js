@@ -25,11 +25,11 @@ const postSchema = new mongoose.Schema({
     },
 
     likeMember : {
-        type : Schema.ObjectId,
+        type : [Schema.ObjectId],
         ref : 'User'
     },
     postComment : {
-        type : Schema.ObjectId,
+        type : [Schema.ObjectId],
         ref : "Comment"
     },
     writeDate : {
@@ -44,18 +44,19 @@ module.exports = mongoose.model('Post', postSchema)
 // ? 매개변수로 req.body 를 받을 예정 표현만 params 으로
 postSchema.statics.create = function(req){
 
-    console.log("Test Point User : ", req.user)
-    console.log("Test Point Body : ", req.body)
-
-
     const post = new this()
     post.postWriter = req.user.username
     post.postWriterNick = req.user.nickName
     post.postTitle = req.body.postTitle
     post.postContent = req.body.postContent
-    if(req.body.postTags){
-        post.postTags = req.body.postTags
+
+    if(req.body.postTag){
+        let temp = req.body.postTag
+        temp = temp.split("#")
+        temp.shift()
+        post.postTags = temp
     }
+    
 
     return post.save()
 }

@@ -5,7 +5,13 @@ const Post = require('../models/post')
 
 
 router.get('/', (req, res) => {
-    res.render('board', { user : req.user })
+    Post.find({}).sort({writeDate : 'descending'}).limit(4)
+    .then((postArr) => {
+        res.render('board', { user : req.user, posts : postArr })
+    })
+    .catch((err) => {
+        throw err
+    })
   })
   
 
