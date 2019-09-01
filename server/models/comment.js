@@ -19,7 +19,7 @@ const commentSchema = new mongoose.Schema({
     },
     commentDate : {
         type : Date,
-        default : Date.now(),
+        default : new Date(),
         required : true,
     }
 })

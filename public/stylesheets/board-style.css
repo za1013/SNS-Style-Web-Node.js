@@ -83,3 +83,14 @@ body {
 .side-menu > h5:nth-child(9) > .menu-link:hover {
     color:#0F5A8A;
 }
+
+.post-more {
+    text-align:center;
+    transition:color 0.7s;
+    font-weight:800;
+    font-size:1.2rem;
+}
+.post-more:hover {
+    cursor:pointer;
+    color : #007bff;
+}

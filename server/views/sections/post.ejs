@@ -10,8 +10,8 @@
                                 <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
                             </div>
                             <div class="ml-2">
-                                <div class="h5 m-0"><%= post.postWriter %></div>
-                                <div class="h7 text-muted"><%= post.postWriterNick %></div>
+                                <div class="h5 m-0 post-writer"><%= post.postWriter %></div>
+                                <div class="h7 text-muted post-writerNick"><%= post.postWriterNick %></div>
                             </div>
                         </div>
                         <div>
@@ -32,38 +32,38 @@
 
                 </div>
                 <div class="card-body">
-                    <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i><%= post.writeDate %></div>
+                    <div class="text-muted h7 mb-2 post-writeDate"> <i class="fa fa-clock-o"></i><%= post.writeDate %></div>
                     <a class="card-link" href="#">
-                        <h5 class="card-title"><%= post.postTitle %></h5>
+                        <h5 class="card-title post-title"><%= post.postTitle %></h5>
                     </a>
 
-                    <p class="card-text"><%= post.postContent %></p>
-                    <div>
+                    <p class="card-text post-content"><%= post.postContent %></p>
+                    <div class="hashTags">
                         <% post.postTags.forEach((item) => { %>
                         <span class="badge badge-primary"><%= item %></span>
                         <% }) %>
                     </div>
                 </div>
                 <div class="card-body">
-                    <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like 
+                    <a href="#" class="card-link like-cnt"><i class="fa fa-gittip"></i> Like 
                         <% if(post.likeMember){ %>
                             <b><%= post.likeMember.length %></b>
                         <% } %>
                     </a>
-                    <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment
+                    <a href="#" class="card-link comment-cnt"><i class="fa fa-comment"></i> Comment
                         <% if(post.postComment){ %>
                             <b><%= post.postComment.length %></b>
                         <% } %>
                     </a>
                     <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer post-comments">
                     <% if(post.postComment){ %>
                         <% post.postComment.forEach((item) => { %>
                             <div class="d-flex justify-content-between align-items-center pt-10 pb-10 border-bottom row">
                                 <div class="col-lg-4">
                                     <img src="https://picsum.photos/30/30" alt="" class="rounded-circle">
-                                    <div class="h7 m-0 comment-master ml-1"><b>@<%= item.commentWriter %></b></div>
+                                    <div class="h7 m-0 comment-master ml-1"><b class="comment-writer">@<%= item.commentWriter %></b></div>
                                 </div>
                                 <div class="col-lg-8 comment-content">
                                     <%= item.commentContent %>
@@ -72,7 +72,7 @@
                         <% }) %>
                     <% } %>
                     <div class="commentWriter pt-10 pb-10">
-                        <form action="/board/comment/createComment/<%= post._id %>" method="POST">
+                        <form action="/board/comment/createComment/<%= post._id %>" method="POST" class="comment_submit">
                             <div class="form-group row align-items-center comment-form">
                                 <input type="text" class="form-control col-lg-10" name="comment" placeholder="Comment" />
                                 <div class="btn-group col-lg-2">

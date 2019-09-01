@@ -32,7 +32,7 @@ const postSchema = new mongoose.Schema({
     },
     writeDate : {
         type : Date,
-        default : Date.now(),
+        default : new Date(),
         required : true,
     }
 })
@@ -46,7 +46,8 @@ postSchema.statics.create = function(req){
     post.postWriter = req.user.username
     post.postWriterNick = req.user.nickName
     post.postTitle = req.body.postTitle
-    post.postContent = req.body.postContent
+    post.postContent = req.body.postContent,
+    post.writeDate = Date.now()
 
     if(req.body.postTag){
         let temp = req.body.postTag

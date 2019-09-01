@@ -18,6 +18,19 @@ router.get('/', (req, res) => {
 
   })
 
+router.get('/more/:skip', (req, res) => {
+    let skip = parseInt(req.params.skip)
+    console.log(skip)
+    Post.find({}).sort({writeDate : 'descending'}).skip(skip).limit(4).populate('postComment')
+    .then((postArr) => {
+        console.log(postArr)
+        res.json(postArr)
+    })
+    .catch((err) => {
+        throw err
+    })
+})
+
 router.get('/myPage', (req, res) => {
     if(req.isAuthenticated()){
         Post.find({ postWriter : req.user.username}).sort({writeDate : 'descending'}).limit(4).populate('postComment')
@@ -89,6 +102,16 @@ router.post('/comment/createComment/:id', (req, res) => {
         console.log("Failed Comment Create")
         res.redirect('/board')
     }
+})
+
+router.get("/text", (req, res) => {
+    Post.find({}).sort({writeDate : 'descending'}).skip(4).limit(4)
+    .then((posts) => {
+        console.log(posts)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
 })
 
 module.exports = router
