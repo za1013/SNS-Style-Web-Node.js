@@ -20,10 +20,8 @@ router.get('/', (req, res) => {
 
 router.get('/more/:skip', (req, res) => {
     let skip = parseInt(req.params.skip)
-    console.log(skip)
     Post.find({}).sort({writeDate : 'descending'}).skip(skip).limit(4).populate('postComment')
     .then((postArr) => {
-        console.log(postArr)
         res.json(postArr)
     })
     .catch((err) => {
@@ -63,11 +61,10 @@ router.post('/createPost', (req, res) => {
     }
 })
 
-router.post('/comment/createComment/:id', (req, res) => {
-
+// ? Create Comment RT json
+router.post('/comment/createComment', (req, res) => {
     if(req.isAuthenticated()){
-        let id = req.params.id
-        console.log(id)
+        let id = req.body.id
         Post.findById(id)
         .then((post) => {
             
@@ -78,29 +75,27 @@ router.post('/comment/createComment/:id', (req, res) => {
                 post.save()
                 .then(() => {
                     req.flash("infoDB", "Success Create")
-                    console.log("Test Point 1 : Success Create Comment")
-                    res.redirect('/board')
+                    res.json(comment)
                 })
                 .catch((err) => {
                     req.flash("infoDB", "Error User Find : " + err)
-                    console.log("Test Point 2 : Failed Create Comment")
-                    res.redirect('/board')
+                    res.json("")
                 })
             })
             .catch((err) => {
                 req.flash("infoDB", "Error User Find : " + err)
                 console.log("Test Point 3 : Failed Create Comment", err)
-                res.redirect('/board')
+                res.json("")
             })
         })
         .catch((err) => {
             req.flash("infoDB", "Error User Find : " + err)
             console.log("Test Point 4 : Failed Create Comment", err)
-            res.redirect('/board')
+            res.json("")
         })
     }else{
         console.log("Failed Comment Create")
-        res.redirect('/board')
+        res.json("")
     }
 })
 

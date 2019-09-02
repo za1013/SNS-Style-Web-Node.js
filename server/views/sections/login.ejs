@@ -8,11 +8,11 @@
                 <form action="/login" method="POST">
                     <div class="group">
                         <label for="email" class="label">email</label>
-                        <input id="email" type="text" class="input" name="email">
+                        <input id="email" type="text" class="input email-input" name="email">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Password</label>
-                        <input id="pass" type="password" class="input" data-type="password" name="password">
+                        <input id="pass" type="password" class="input password-input" data-type="password" name="password">
                     </div>
                     <div class="group">
                         <input id="check" type="checkbox" class="check" checked name="keepSigned">
@@ -35,15 +35,15 @@
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Password</label>
-                        <input id="pass" type="password" class="input" data-type="password" name="password">
+                        <input id="pass" type="password" class="input password-input" data-type="password" name="password">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Repeat Password</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                        <input id="pass" type="password" class="input password-input" data-type="password">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Email Address</label>
-                        <input id="pass" type="text" class="input" name="email">
+                        <input id="pass" type="text" class="input email-input" name="email">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Nick Name</label>
@@ -94,14 +94,14 @@
     </div>
 </div>
 <ul class="list-group list-group-flush">
-    <li class="list-group-item">
+    <!-- <li class="list-group-item">
         <div class="h6 text-muted">Followers</div>
         <div class="h5">미정</div>
     </li>
     <li class="list-group-item">
         <div class="h6 text-muted">Following</div>
         <div class="h5">미정</div>
-    </li>
+    </li> -->
     <li class="list-group-item logout-link"><a href="/logout">LOG OUT</a></li>
 </ul>
 <% } %>

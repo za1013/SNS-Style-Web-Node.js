@@ -58,7 +58,7 @@ $(".post-more").on('click', function(e){
                         $comment.find(".comment-content").text(postComment[commentIdx].commentContent)
                         $comments.append($comment)
                     }
-                    $clone.find(".comment_submit").attr("action", "/board/comment/createComment/"+id)
+                    $clone.find(".createComment").attr("target", id)
                     $postBoard.append($clone)
                 }
             }else{
@@ -73,6 +73,31 @@ $(".post-more").on('click', function(e){
         $(".post-more").text("Failed.. More..")
     })
 
+})
+
+$(".createComment").on('click', function(e){
+    let id = $(this).attr('target')
+    let comment = $(this).parents(".comment-form").children().eq(0).val()
+    if(comment){
+        $.ajax({
+            url : window.location.href + '/comment/createComment',
+            data : { comment : comment, id : id },
+            method : "POST",
+            dataType : "json",
+        })
+        .done((data) => {
+            console.log(data)
+            let $comment = $('<div class="d-flex justify-content-between align-items-center pt-10 pb-10 border-bottom row"><div class="col-lg-4"><img src="https://picsum.photos/30/30"class="rounded-circle"><div class="h7 m-0 comment-master ml-1"><b class="comment-writer"></b></div></div><div class="col-lg-8 comment-content"></div></div>')
+            $comment.find(".comment-writer").text("@"+ data.commentWriter)
+            $comment.find(".comment-content").text(data.commentContent)
+            $(this).parents(".post-comments").prepend($comment)
+        })
+        .fail((xhr, status, errorThrown) => {
+            console.log("Failed ....")
+        })
+    }else{
+        alert("Please Input Comment..")
+    }
 })
 
 $.ajax({
