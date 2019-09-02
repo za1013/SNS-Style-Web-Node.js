@@ -99,16 +99,3 @@ $(".createComment").on('click', function(e){
         alert("Please Input Comment..")
     }
 })
-
-$.ajax({
-    url : window.location.href + "/more" + "/4",
-    method : "GET",
-    dataType : "json"
-})
-.done((data) => {
-    console.log("OK")
-    console.log(data)
-})
-.fail((xhr, status, errorThrown) => {
-    console.log("Fail")
-})

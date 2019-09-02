@@ -8,18 +8,18 @@
                 <form action="/login" method="POST">
                     <div class="group">
                         <label for="email" class="label">email</label>
-                        <input id="email" type="text" class="input email-input" name="email">
+                        <input id="email" type="text" class="input email-input login-email" name="email">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Password</label>
-                        <input id="pass" type="password" class="input password-input" data-type="password" name="password">
+                        <input id="pass" type="password" class="input password-input login-password" data-type="password" name="password">
                     </div>
                     <div class="group">
                         <input id="check" type="checkbox" class="check" checked name="keepSigned">
                         <label for="check"><span class="icon"></span> Keep me Signed in</label>
                     </div>
                     <div class="group">
-                        <input type="submit" class="button" value="Sign In">
+                        <input type="submit" class="button login-submit" value="Sign In">
                     </div>
                     <div class="hr"></div>
                     <div class="foot-lnk forgot-pw">
@@ -30,24 +30,24 @@
             <div class="sign-up-htm">
                 <form method="POST" action="/register">
                     <div class="group">
-                        <label for="user" class="label">Username</label>
-                        <input id="user" type="text" class="input" name="username">
+                        <label for="pass" class="label">Email Address</label>
+                        <input id="pass" type="text" class="input email-input reg-email" name="email">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Password</label>
-                        <input id="pass" type="password" class="input password-input" data-type="password" name="password">
+                        <input id="pass" type="password" class="input password-input reg-password" data-type="password" name="password">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Repeat Password</label>
-                        <input id="pass" type="password" class="input password-input" data-type="password">
+                        <input id="pass" type="password" class="input password-input reg-passcheck" data-type="password">
                     </div>
                     <div class="group">
-                        <label for="pass" class="label">Email Address</label>
-                        <input id="pass" type="text" class="input email-input" name="email">
+                        <label for="user" class="label">Username</label>
+                        <input id="user" type="text" class="input username-input reg-username" name="username">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Nick Name</label>
-                        <input id="pass" type="text" class="input" name="nickName">
+                        <input id="pass" type="text" class="input nickname-input reg-nickname" name="nickName">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Like Items</label>
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="group">
-                        <input type="submit" class="button" value="Sign Up">
+                        <input type="submit" class="button register-submit" value="Sign Up">
                     </div>
                 </form>
             </div>
