@@ -29,6 +29,21 @@ router.get('/more/:skip', (req, res) => {
     })
 })
 
+
+router.get('/search', (req, res) => {
+    // ? express Query String 
+    let search = req.body.search || req.query.search
+
+    Post.find().or([{postTitle : search}, {postContent : search}])
+    .sort({writeDate : 'descending'}).limit(4).populate('postComment')
+    .then((posts) => {
+        res.render('board', { user : req.user, posts : posts })
+    })
+    .catch((err) => {
+        throw err
+    })
+})
+
 router.get('/myPage', (req, res) => {
     if(req.isAuthenticated()){
         Post.find({ postWriter : req.user.username}).sort({writeDate : 'descending'}).limit(4).populate('postComment')
@@ -36,12 +51,22 @@ router.get('/myPage', (req, res) => {
             res.render('myPage', { user : req.user, posts : postArr })
         })
         .catch((err) => {
-            console.log("Point 3")
             throw err
         })
     }else{
         res.redirect('/board')
     }
+})
+
+router.get('/hash/:tag', (req, res) => {
+    Post.find({'postTags' : req.params.tag })
+    .sort({writeDate : 'descending'}).limit(4).populate('postComment')
+    .then((postArr) => {
+        res.render('myPage', { user : req.user, posts: postArr })
+    })
+    .catch((err) => {
+        throw err
+    }) 
 })
   
 router.post('/createPost', (req, res) => {
@@ -60,6 +85,8 @@ router.post('/createPost', (req, res) => {
         res.redirect('/board')
     }
 })
+
+
 
 // ? Create Comment RT json
 router.post('/comment/createComment', (req, res) => {
@@ -99,7 +126,7 @@ router.post('/comment/createComment', (req, res) => {
     }
 })
 
-router.get("/text", (req, res) => {
+router.get("/test", (req, res) => {
     Post.find({}).sort({writeDate : 'descending'}).skip(4).limit(4)
     .then((posts) => {
         console.log(posts)

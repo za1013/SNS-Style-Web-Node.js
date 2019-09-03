@@ -11,13 +11,13 @@
 
 <body>
     <nav class="navbar navbar-light bg-white">
-        <a href="#" class="navbar-brand">Boxs-Books</a>
-        <form class="form-inline">
+        <a href="/board" class="navbar-brand">Boxs-Books</a>
+        <form class="form-inline" mehtod="GET" action="/board/search">
             <div class="input-group">
-                <input type="text" class="form-control" aria-label="Recipient's username"
-                    aria-describedby="button-addon2">
+                <input type="text" class="form-control search-input" aria-label="Recipient's username"
+                    aria-describedby="button-addon2" name="search" placeholder="Title, Content Search">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-primary" type="button" id="button-addon2">
+                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">
                         <i class="fa fa-search"></i>
                     </button>
                 </div>
@@ -38,11 +38,7 @@
                 <% include ../sections/postingForm %>
                 <!-- Post Body -->
                 <% include ../sections/post %>
-                <div class="post-add card gedf-card">
-                    <div class="card-header post-more">
-                        More....
-                    </div>
-                </div>
+                <% include ../sections/more %>
             </div>
             <div class="col-lg-3">
                 <!-- Side Menubar -->

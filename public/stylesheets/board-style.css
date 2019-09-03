@@ -94,3 +94,11 @@ body {
     cursor:pointer;
     color : #007bff;
 }
+
+.hashTag {
+    cursor:pointer;
+    transition:background 0.7s;
+}
+.hashTag:hover {
+    background : #7FE374;
+}

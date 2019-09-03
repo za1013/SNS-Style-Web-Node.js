@@ -47,7 +47,7 @@ $(".post-more").on('click', function(e){
                     $clone.find(".like-cnt").text("Like "+likeMember.length)
                     let $hashTags = $clone.find(".hashTags").empty()
                     for(let tagIdx = 0; tagIdx<postTags.length; postTags++){
-                        let tag = $("<span class='badge badge-primary'>"+ postTags[tagIdx] +"</span>")
+                        let tag = $("<span class='badge badge-primary hashTag'>"+ postTags[tagIdx] +"</span>")
                         $hashTags.append(tag)
                     }
                     $clone.find(".comment-cnt").text("Comment "+postComment.length)
@@ -98,4 +98,13 @@ $(".createComment").on('click', function(e){
     }else{
         alert("Please Input Comment..")
     }
+})
+
+
+
+$(".hashTag").on('click', function(e){
+    let tag = $(this).text()
+    let url = "http://" + window.location.host + '/board/hash/'+tag
+    $(location).attr('href', url)
+    
 })

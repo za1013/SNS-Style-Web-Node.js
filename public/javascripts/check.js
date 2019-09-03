@@ -2,9 +2,10 @@ $('input[type="email"]').on('focusout', function(e){
     let email_reg = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
  
      if(!email_reg.test($(this).val())){
-         this.authCheck = true;
+         this.authCheck = false;
      }else{
          this.authCheck = true;
+         console.log("OK !")
      }
  });
 
@@ -14,6 +15,7 @@ $('input[type="email"]').on('focusout', function(e){
         this.authCheck = false;
     }else{
         this.authCheck = true;
+        console.log("OK !")
     }
 });
 $('.reg-username').on('focusout', function(e){
